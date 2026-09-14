@@ -1,0 +1,6 @@
+{
+  "name": "365 Días de Color",
+  "description": "Landing page de ventas para 365 Días de Color: Convierte unos minutos al día en un hábito creativo para dibujar, colorear y desconectar durante todo un año con 3 bonos incluidos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
