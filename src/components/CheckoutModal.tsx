@@ -11,7 +11,7 @@ interface CheckoutModalProps {
 export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   isOpen,
   onClose,
-  checkoutUrl = 'https://pay.hotmart.com/',
+  checkoutUrl = 'https://pay.hotmart.com/X107527720L?checkoutMode=10',
 }) => {
   const [email, setEmail] = useState('');
 
@@ -53,6 +53,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               src={IMAGES.heroCover}
               alt="Pack 365 Días de Color"
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
               className="w-16 h-16 rounded-xl object-cover border border-[#E5DAD0]"
             />
             <div className="flex-1">
@@ -93,7 +95,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#3F6E4D]" />
-                <span>Bono 03: 200 Dibujos Frases Inspiradoras</span>
+                <span>Bono 03: Dibujos con Frases Inspiradoras</span>
               </span>
               <span className="font-semibold text-[#3F6E4D]">GRATIS</span>
             </div>
@@ -109,7 +111,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               </span>
               <span className="text-xs text-[#3F6E4D] font-medium">Un único pago · Sin suscripción</span>
             </div>
-            <span className="text-3xl font-black text-[#1E1210]">US$5.00</span>
+            <span className="text-3xl font-black text-[#E03A1E]">US$5.00</span>
           </div>
 
           {/* Action Button */}
@@ -130,9 +132,9 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
             <button
               type="submit"
-              className="w-full group inline-flex items-center justify-center px-6 py-4 text-base font-extrabold text-white bg-[#1F1513] hover:bg-[#342320] rounded-xl shadow-lg transition-all cursor-pointer uppercase tracking-wider text-center"
+              className="w-full group inline-flex items-center justify-center px-6 py-4 text-base font-extrabold text-white bg-[#E03A1E] hover:bg-[#C83017] rounded-xl shadow-lg shadow-[#E03A1E]/30 transition-all active:scale-[0.98] cursor-pointer uppercase tracking-wider text-center"
             >
-              <span>IR AL PAGO SEGURO (US$5.00)</span>
+              <span>QUIERO DIBUJAR TODO EL AÑO POR 5$USD</span>
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </button>
           </form>

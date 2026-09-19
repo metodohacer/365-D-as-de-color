@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
 import { FaqItem } from '../types';
+import { HOTMART_CHECKOUT_URL } from '../constants';
 
 const FAQ_DATA: FaqItem[] = [
   {
@@ -123,13 +124,15 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onCtaClick }) => {
             Accede hoy al calendario completo y los 3 bonos incluidos por solo US$5.00 con garantía de 7 días.
           </p>
           <div className="pt-2">
-            <button
-              onClick={onCtaClick}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-extrabold text-white bg-[#1F1513] hover:bg-[#342320] rounded-xl shadow-md transition-all cursor-pointer uppercase tracking-wider"
+            <a
+              href={HOTMART_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-extrabold text-white bg-[#E03A1E] hover:bg-[#C83017] rounded-xl shadow-lg shadow-[#E03A1E]/30 transition-all active:scale-[0.98] cursor-pointer uppercase tracking-wider text-center"
             >
-              <span>QUIERO MI ACCESO POR US$5.00</span>
+              <span>QUIERO DIBUJAR TODO EL AÑO POR 5$USD</span>
               <ArrowRight className="w-4 h-4 ml-2" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

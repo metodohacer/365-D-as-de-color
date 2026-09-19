@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { UnlockSection } from './components/UnlockSection';
-import { NotArtistSection } from './components/NotArtistSection';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { BonusesSection } from './components/BonusesSection';
 import { PricingSection } from './components/PricingSection';
+import { GuaranteeSection } from './components/GuaranteeSection';
 import { SummarySection } from './components/SummarySection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
@@ -43,17 +43,17 @@ export default function App() {
         {/* 2. Lo que vas a desbloquear */}
         <UnlockSection />
 
-        {/* 3. No necesitas “ser artista”. Necesitas empezar. */}
-        <NotArtistSection />
-
-        {/* 4. Cómo funcionan tus 365 Días de Color */}
+        {/* 3. Cómo funcionan tus 365 Días de Color */}
         <HowItWorksSection />
 
         {/* 5. Y además recibes 3 BONOS GRATIS */}
         <BonusesSection onCtaClick={() => scrollToOfferOrOpenModal(false)} />
 
-        {/* 7. Tu año creativo por US$5.00 */}
+        {/* 6. Tu año creativo por US$5.00 */}
         <PricingSection onCtaClick={() => scrollToOfferOrOpenModal(true)} />
+
+        {/* 7. Garantía Incondicional de 7 Días */}
+        <GuaranteeSection onCtaClick={() => scrollToOfferOrOpenModal(true)} />
 
         {/* 8. Resumiendo... */}
         <SummarySection onCtaClick={() => scrollToOfferOrOpenModal(true)} />

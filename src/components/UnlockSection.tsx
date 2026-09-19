@@ -1,43 +1,39 @@
 import React from 'react';
-import { CheckCircle2, Sparkles, Calendar, Palette, Clock, SunMedium, Compass } from 'lucide-react';
+import { CheckCircle2, Sparkles, Clock, SunMedium, Compass } from 'lucide-react';
 
-const UNLOCK_ITEMS = [
+interface UnlockItem {
+  title: string;
+  desc: string;
+  image?: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+const UNLOCK_ITEMS: UnlockItem[] = [
   {
-    icon: LightbulbIcon,
     title: 'Una idea para crear cada día',
-    desc: 'Deja de perder tiempo pensando qué dibujar.',
+    desc: 'Deja de perder tiempo pensando qué dibujar. Una propuesta clara y guiada para cada día del año.',
+    image: 'https://i.postimg.cc/D0VqjMX1/Chat-GPT-Image-18-sept-2026-02-05-03-p-m.png',
+    icon: CheckCircle2,
   },
   {
-    icon: Calendar,
-    title: '12 temáticas mensuales',
-    desc: 'Naturaleza, flores, animales, paisajes, fantasía, creatividad y mucho más.',
-  },
-  {
-    icon: Clock,
     title: 'Una rutina creativa fácil de mantener',
-    desc: 'Abre, elige tu propuesta del día y comienza.',
+    desc: 'Abre tu material, elige la propuesta del día y comienza sin complicarte con horas libres.',
+    image: 'https://i.postimg.cc/ncy1SMqY/Chat-GPT-Image-18-sept-2026-01-59-25-p-m.png',
+    icon: Clock,
   },
   {
-    icon: SunMedium,
     title: 'Un momento para desconectar',
-    desc: 'Cambia unos minutos de pantalla y ruido por lápiz, papel y color.',
+    desc: 'Cambia unos minutos de pantalla y ruido por lápiz, papel y color. Un respiro diario para calmar la mente.',
+    image: 'https://i.postimg.cc/Xv86LRBp/Chat-GPT-Image-18-sept-2026-01-34-25-p-m.png',
+    icon: SunMedium,
   },
   {
-    icon: Compass,
     title: 'Inspiración durante todo el año',
-    desc: 'Y si un día no puedes hacerlo, simplemente continúas cuando quieras. No tienes que seguir los dibujos estrictamente en orden.',
+    desc: 'Y si un día no puedes hacerlo, simplemente continúas cuando quieras. Sin presiones y a tu propio ritmo.',
+    image: 'https://i.postimg.cc/sX4PvJ8y/Chat-GPT-Image-18-sept-2026-01-41-58-p-m.png',
+    icon: Compass,
   },
 ];
-
-function LightbulbIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
-      <path d="M9 18h6" />
-      <path d="M10 22h4" />
-    </svg>
-  );
-}
 
 export const UnlockSection: React.FC = () => {
   return (
@@ -55,26 +51,38 @@ export const UnlockSection: React.FC = () => {
           <div className="w-16 h-1 bg-[#c4998e] mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        {/* 4 Benefits Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           {UNLOCK_ITEMS.map((item, idx) => {
-            const isLast = idx === UNLOCK_ITEMS.length - 1;
+            const IconComponent = item.icon;
             return (
               <div
                 key={idx}
-                className={`group bg-white rounded-2xl p-6 sm:p-7 border border-[#E9DFD6] shadow-xs hover:shadow-md transition-all duration-200 ${
-                  isLast ? 'md:col-span-2 md:max-w-2xl md:mx-auto w-full' : ''
-                }`}
+                className="group bg-white rounded-2xl p-6 sm:p-7 border border-[#E9DFD6] shadow-xs hover:shadow-md transition-all duration-200 flex flex-col h-full"
               >
+                {/* Image for Cards */}
+                {item.image && (
+                  <div className="relative w-full rounded-2xl overflow-hidden border border-[#E8DDD2] mb-5 shadow-xs bg-[#FAF7F3] flex items-center justify-center p-1 sm:p-2 h-72 sm:h-80 md:h-[360px]">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      referrerPolicy="no-referrer"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-contain rounded-xl transform transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
+
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-[#c4998e]/20 text-[#8C4A3A] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#c4998e] group-hover:text-white transition-colors duration-200">
-                    <CheckCircle2 className="w-6 h-6 stroke-[2.5]" />
+                    <IconComponent className="w-5 h-5 stroke-[2.5]" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-lg sm:text-xl font-bold text-[#1E1310] leading-snug mb-1.5">
                       {item.title}
                     </h3>
-                    <p className="text-base text-[#4E3934] leading-relaxed font-normal">
+                    <p className="text-sm sm:text-base text-[#4E3934] leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
