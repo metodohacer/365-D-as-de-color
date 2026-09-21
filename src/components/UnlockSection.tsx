@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Sparkles, Clock, SunMedium, Compass } from 'lucide-react';
+import { IMAGES } from '../assets';
 
 interface UnlockItem {
   title: string;
@@ -12,25 +13,25 @@ const UNLOCK_ITEMS: UnlockItem[] = [
   {
     title: 'Una idea para crear cada día',
     desc: 'Deja de perder tiempo pensando qué dibujar. Una propuesta clara y guiada para cada día del año.',
-    image: 'https://i.postimg.cc/D0VqjMX1/Chat-GPT-Image-18-sept-2026-02-05-03-p-m.png',
+    image: IMAGES.unlock1,
     icon: CheckCircle2,
   },
   {
     title: 'Una rutina creativa fácil de mantener',
     desc: 'Abre tu material, elige la propuesta del día y comienza sin complicarte con horas libres.',
-    image: 'https://i.postimg.cc/ncy1SMqY/Chat-GPT-Image-18-sept-2026-01-59-25-p-m.png',
+    image: IMAGES.unlock2,
     icon: Clock,
   },
   {
     title: 'Un momento para desconectar',
     desc: 'Cambia unos minutos de pantalla y ruido por lápiz, papel y color. Un respiro diario para calmar la mente.',
-    image: 'https://i.postimg.cc/Xv86LRBp/Chat-GPT-Image-18-sept-2026-01-34-25-p-m.png',
+    image: IMAGES.unlock3,
     icon: SunMedium,
   },
   {
     title: 'Inspiración durante todo el año',
     desc: 'Y si un día no puedes hacerlo, simplemente continúas cuando quieras. Sin presiones y a tu propio ritmo.',
-    image: 'https://i.postimg.cc/sX4PvJ8y/Chat-GPT-Image-18-sept-2026-01-41-58-p-m.png',
+    image: IMAGES.unlock4,
     icon: Compass,
   },
 ];
